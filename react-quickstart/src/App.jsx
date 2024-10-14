@@ -1,5 +1,4 @@
-import "./App.css"
-import { useState } from "react";
+import { useState } from 'react';
 
 function MyButton() {
   const [count, setCount] = useState(0);
@@ -9,12 +8,20 @@ function MyButton() {
   }
 
   return (
-    <>
-      <h1>Welcome to my app</h1>
-      <button onClick={handleClick}>
-        Clicked {count} times
-      </button>
-    </>
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
   );
 }
-export default MyButton
+
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <hr />
+      <MyButton />
+    </div>
+  );
+}
